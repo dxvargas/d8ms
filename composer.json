@@ -47,7 +47,8 @@
 	"merge-plugin": {
 	  "include": [
 		"subsite/*/composer.json",
-		"config/*/composer.json"
+		"config/*/composer.json",
+		"web/profiles/*/composer.json"
 	    ]
 	},
         "installer-paths": {
