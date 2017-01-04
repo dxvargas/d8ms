@@ -4,6 +4,19 @@ Drupal 8 multisite platform with composer.
 
 :bell: This tool is under heavy construction, there are no releases at all.
 
+d8ms is a multisite platform intended to use as a base for several subsites that
+share most of the code. By using composer with "wikimedia/composer-merge-plugin",
+all the composer.json files living in configuration and profile directories are
+merged with the main composer.json file to generate a unique composer.lock file
+that will be shared by all subsites.
+ 
+This platform works with three layers:
+1. This repository which is the base for all subsites sharing most of the code;
+1. The profile repository which is defines common themes and modules for all
+subsites;
+1. The subsites repositories that have the custom themes, modules and
+configuration files unique for each subsite.
+
 Getting Started
 ===============
 1. Clone this repo
@@ -13,7 +26,7 @@ Getting Started
   * Create the file `web/sites/sites.local.php` based in `web/sites/sites.php`
   * Create the file `web/sites/settings.allsites.local.php` based in `web/sites/settings.allsites.php`
 1. Setup subsite configuration structure
-  * Run `git clone https://github.com/dxvargas/d8ms-subsite subsite/default`
+  * Run `git clone git@github.com:dxvargas/d8ms.git subsite/default`
   * Make symlinks for the subsite directories
     * Run `cd config`
     * Run `ln -s ../subsite/default/config default`
@@ -21,16 +34,20 @@ Getting Started
     * Run `cd ../web` and `drush @default site-install -vy --account-name=admin --account-pass=admin --config-dir=../config/default/sync`
     * Verify that sites are working: `drush @default status`
 
+
 Creating a new Subite (e.g. `foo`)
 ===============
 
+1. Follow the instructions in Getting Started
 1. Configure settings files
   * Run `cp -r web/sites/default web/sites/foo && rm -rf web/sites/foo/files/*`
   * Add entry for `foo` in `drush/aliases.drushrc.local.php`
   * Add entry for `foo` in `web/sites/sites.local.php`
   * Probably you'll need to add a new entry to "trusted_host_patterns" in `settings.allsites.local.php`
 1. Setup subsite configuration structure
-  * Run `git clone https://github.com/dxvargas/d8ms-subsite subsite/foo`
+  * Run `git clone git@github.com:dxvargas/d8ms-subsite.git subsite/foo` for an
+example how configuration directories should be, in a final step you will change
+the repository info
   * Make symlinks for the subsite directories
     * Run `cd config`
     * Run `ln -s ../subsite/foo/config foo`
@@ -41,28 +58,43 @@ Creating a new Subite (e.g. `foo`)
 1. Usually you will also want to have custom themes and modules, you can store
 them in `subsite/foo` and add symlinks in usual directories
 
-
-Profiles
+Creating a new Subite (e.g. `foo`) with specific profile (e.g. d8mspro)
 ===============
-If you want to create a profile that enables configurations,
-modules and themes, for all your subsites living under the d8ms platform.
-The profiles will not be part of this repository nor any subsite repository.
-One easy way to do this is to fork the main repository dxvargas/d8ms and set it
-as upstream, then in the forked repository you can add some profile(s).
 
-This was done in https://github.com/webzina/d8ms where the d8mspro profile was added.
-Then to install the first time the command is `drush @foo site-install d8mspro -vy --account-name=admin --account-pass=admin`
-and then to export the definitions to use this profile the command is `drush @foo cex -y`.
+1. Follow the instructions in Getting Started
+1. Configure settings files
+  * Run `cp -r web/sites/default web/sites/foo && rm -rf web/sites/foo/files/*`
+  * Add entry for `foo` in `drush/aliases.drushrc.local.php`
+  * Add entry for `foo` in `web/sites/sites.local.php`
+  * Probably you'll need to add a new entry to "trusted_host_patterns" in `settings.allsites.local.php`
+1. Setup subsite configuration structure
+  * Run `git clone git@github.com:dxvargas/d8ms-subsite.git subsite/foo` for an
+example how configuration directories should be, in a final step you will change
+the repository info
+  * Make symlinks for the subsite directories
+    * Run `cd config`
+    * Run `ln -s ../subsite/foo/config foo`
+1. Put a Drupal profile in place, e.g. `git clone git@github.com:dxvargas/d8mspro.git web/profiles`
+1. Install Drupal
+    * Run `cd ../web` and `drush @foo site-install d8mspro -vy --account-name=admin --account-pass=admin`
+    * Verify that sites are working: `drush @foo status`
+1. Configure subsite/foo to have it's own repository
+1. Export configuration, run `drush @foo cex`
+1. Usually you will also want to have custom themes and modules, you can store
+them in `subsite/foo` and add symlinks in usual directories
 
-More information in GitHub about forking:
-[Fork A Repo](https://help.github.com/articles/fork-a-repo/)
+ToDos
+===============
+
+1. Many of the steps for first install and creating a new subsite should be
+automated with scripts;
+1. Packages that come from a secondary composer.json (via "wikimedia/composer-merge-plugin")
+should be downloaded into a path relative to that composer.json.
 
 Notes
-===============
+================
 
 1. If subsite configuration structure is only for sync files, the repository
 can be cloned directly there. If so, you it is not needed to use symlinks;
-1. Many of the steps for first install and creating a new subsite will be
-automated with a script;
 1. Thanks for the inspiration of [multiplesite](https://github.com/weitzman/multiplesite)
 project from [Moshe Weitzman](https://github.com/weitzman).

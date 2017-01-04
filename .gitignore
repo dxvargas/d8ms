@@ -14,6 +14,8 @@ web/sites/*/files
 !/config/.gitkeep
 /subsite/*
 !/subsite/.gitkeep
+/web/profiles/*
+!/web/profiles/.gitkeep
 /web/sites
 !/web/sites/default
 !/web/development.services.yml
