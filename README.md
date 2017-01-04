@@ -74,7 +74,7 @@ the repository info
   * Make symlinks for the subsite directories
     * Run `cd config`
     * Run `ln -s ../subsite/foo/config foo`
-1. Put a Drupal profile in place, e.g. `git clone git@github.com:dxvargas/d8mspro.git web/profiles//d8mspro`
+1. Put a Drupal profile in place, e.g. `git clone git@github.com:dxvargas/d8mspro.git web/profiles/d8mspro`
 1. Install Drupal
     * Run `cd ../web` and `drush @foo site-install d8mspro -vy --account-name=admin --account-pass=admin`
     * Verify that sites are working: `drush @foo status`
