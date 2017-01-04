@@ -17,7 +17,6 @@ $databases['default']['default'] = array (
     'driver' => 'mysql',
 );
 
-$settings['install_profile'] = 'minimal';
 $config_directories['sync'] = '../config/'. $sites_subdir . '/sync';
 
 if (file_exists(__DIR__ . '/settings.allsites.local.php')) {

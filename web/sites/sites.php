@@ -55,7 +55,7 @@
  */
 
 $sites = array(
-  '8080.localhost' => 'default',  
+  '8080.localhost' => 'default',
 );
 
 if (file_exists(__DIR__ . '/sites.local.php')) {

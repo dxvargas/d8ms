@@ -26,7 +26,7 @@ Getting Started
   * Create the file `web/sites/sites.local.php` based in `web/sites/sites.php`
   * Create the file `web/sites/settings.allsites.local.php` based in `web/sites/settings.allsites.php`
 1. Setup subsite configuration structure
-  * Run `git clone git@github.com:dxvargas/d8ms.git subsite/default`
+  * Run `git clone git@github.com:dxvargas/d8ms-subsite.git subsite/default`
   * Make symlinks for the subsite directories
     * Run `cd config`
     * Run `ln -s ../subsite/default/config default`
