@@ -74,9 +74,12 @@ the repository info
   * Make symlinks for the subsite directories
     * Run `cd config`
     * Run `ln -s ../subsite/foo/config foo`
-1. Put a Drupal profile in place, e.g. `git clone git@github.com:dxvargas/d8mspro.git web/profiles/d8mspro`
+    * Run `cd ..`
+1. Put a Drupal profile in place
+    * Run `git clone git@github.com:dxvargas/d8mspro.git web/profiles/d8mspro`
+    * Run `composer install`
 1. Install Drupal
-    * Run `cd ../web` and `drush @foo site-install d8mspro -vy --account-name=admin --account-pass=admin`
+    * Run `cd web` and `drush @foo site-install d8mspro -vy --account-name=admin --account-pass=admin`
     * Verify that sites are working: `drush @foo status`
 1. Configure subsite/foo to have it's own repository
 1. Export configuration, run `drush @foo cex`
@@ -89,7 +92,8 @@ ToDos
 1. Many of the steps for first install and creating a new subsite should be
 automated with scripts;
 1. Packages that come from a secondary composer.json (via "wikimedia/composer-merge-plugin")
-should be downloaded into a path relative to that composer.json.
+should be downloaded into a path relative to that composer.json;
+1. Implement a deployment strategy;
 
 Notes
 ================
