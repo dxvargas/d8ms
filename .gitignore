@@ -21,11 +21,11 @@ web/sites/*/files
 !/web/profiles/.gitkeep
 /web/sites/*
 !/web/sites/default
-!/web/development.services.yml
-!/web/example.settings.php
-!/web/example.sites.php
-!/web/settings.allsites.php
-!/web/sites.php
+!/web/sites/development.services.yml
+!/web/sites/example.settings.php
+!/web/sites/example.sites.php
+!/web/sites/settings.allsites.php
+!/web/sites/sites.php
 
 # Ignore local files
 *.local.php
