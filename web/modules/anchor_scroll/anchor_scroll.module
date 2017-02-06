@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Enables scrolling to destination anchor links.
+ */
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function anchor_scroll_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'anchor_scroll/anchor_scroll';
+}
+
+function anchor_scroll_preprocess_block(&$variables) {
+    if (!empty($variables['content']['#name'])) {
+        $cssid = Html::getUniqueId($variables['content']['#title']['#markup']);
+        $variables['title_attributes']['id'] = $cssid;
+    }
+}

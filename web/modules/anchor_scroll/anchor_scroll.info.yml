@@ -1,0 +1,5 @@
+name: 'Anchor Scroll'
+description: 'Scroll users to the destination instead of the browser default jump behavior.'
+package: 'User interface'
+type: module
+core: '8.x'
