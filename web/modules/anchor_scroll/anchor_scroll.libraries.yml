@@ -1,6 +1,0 @@
-anchor_scroll:
-  js:
-    js/anchor_scroll.js: {}
-  dependencies:
-      - core/jquery
-      - core/jquery.once
