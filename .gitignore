@@ -29,3 +29,4 @@ web/sites/*/files
 
 # Ignore local files
 *.local.php
+*.local.yml
