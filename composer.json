@@ -14,7 +14,8 @@
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "cweagans/composer-patches": "~1.0",
     "drupal/core": "~8.0",
-    "wikimedia/composer-merge-plugin": "^1.3"
+    "wikimedia/composer-merge-plugin": "^1.3",
+    "dompdf/dompdf": "0.8.0"
   },
   "require-dev": {
   },
