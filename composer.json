@@ -61,7 +61,7 @@
     },
     "patches": {
       "drupal/core": {
-        "Improve Views integration for DateRange": "https://www.drupal.org/files/issues/0001-Issue-2786577-Improve-the-Views-integration-for-Date_3.patch"
+        "Improve Views integration for DateRange - remove in D8.6": "https://www.drupal.org/files/issues/2786577-270_0.patch"
       }
     }
   }
