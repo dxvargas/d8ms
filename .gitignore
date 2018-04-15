@@ -9,6 +9,9 @@
 /web/themes/contrib
 /web/libraries
 
+# Ignore drush aliases
+/drush/sites
+
 # Ignore Drupal's file directory
 web/sites/*/files
 
