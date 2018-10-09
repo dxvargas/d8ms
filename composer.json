@@ -10,12 +10,12 @@
     }
   ],
   "require": {
-    "composer/installers": "^1.0.20",
-    "drupal-composer/drupal-scaffold": "^2.0.1",
-    "cweagans/composer-patches": "~1.0",
-    "drupal/core": "~8.0",
-    "wikimedia/composer-merge-plugin": "^1.3",
-    "dompdf/dompdf": "0.8.0"
+    "composer/installers": "^1.6",
+    "drupal-composer/drupal-scaffold": "^2.5",
+    "cweagans/composer-patches": "^1.6",
+    "drupal/core": "^8.6",
+    "wikimedia/composer-merge-plugin": "^1.4",
+    "dompdf/dompdf": "^0.8"
   },
   "require-dev": {
   },
