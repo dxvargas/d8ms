@@ -719,3 +719,4 @@ require __DIR__ . '/../settings.allsites.php';
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
+$settings['install_profile'] = 'd8mspro';
