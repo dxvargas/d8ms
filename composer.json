@@ -15,7 +15,8 @@
     "cweagans/composer-patches": "^1.6",
     "drupal/core": "^8.6",
     "wikimedia/composer-merge-plugin": "^1.4",
-    "dompdf/dompdf": "^0.8"
+    "dompdf/dompdf": "^0.8",
+    "drush/drush": "^9.7"
   },
   "require-dev": {
   },
