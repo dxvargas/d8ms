@@ -15,7 +15,7 @@
 # Ignore Drupal's file directory
 web/sites/*/files
 
-#Ignore instance specific dirs
+# Ignore instance specific dirs
 /config/*
 !/config/.gitkeep
 /subsite/*
@@ -33,3 +33,9 @@ web/sites/*/files
 # Ignore local files
 *.local.php
 *.local.yml
+
+# Ignore custom docker file
+/docker-compose.yml
+
+# Ignore phpstorm files
+/.idea
