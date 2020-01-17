@@ -9,7 +9,7 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - '8080:80'
+      - 8080:80
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: ''
@@ -19,6 +19,6 @@ services:
       - DISPLAY=:99
       - SE_OPTS=-debug
     ports:
-      - "5900:5900"
+      - 5900:5900
     expose:
-      - '4444'
+      - 4444
