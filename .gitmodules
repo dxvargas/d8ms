@@ -1,0 +1,3 @@
+[submodule "web/profiles/d8mspro"]
+	path = web/profiles/d8mspro
+	url = git@github.com:dxvargas/d8mspro.git

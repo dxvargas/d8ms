@@ -33,3 +33,10 @@ web/sites/*/files
 # Ignore local files
 *.local.php
 *.local.yml
+
+# Ignore editor files
+/.idea
+
+# Ignore local docker files
+/docker-compose.*.yml
+!/docker-compose.dev.yml
